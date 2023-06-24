@@ -1,34 +1,29 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
-import { Redirect } from "react-router-dom";
 
 function AppRouter({ refreshUser, isLoggedIn, userObj }) {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       {isLoggedIn && <Navigation userObj={userObj} />}
-      <Switch>
+      <Routes>
         {isLoggedIn ? (
           <>
-            <Route exact path="/">
-              <Home userObj={userObj} />
-            </Route>
-            <Route exact path="/profile">
-              <Profile userObj={userObj} refreshUser={refreshUser} />
-            </Route>
+            <Route path="/" element={<Home userObj={userObj} />}></Route>
+            <Route
+              path="/profile"
+              element={<Profile userObj={userObj} refreshUser={refreshUser} />}
+            ></Route>
           </>
         ) : (
           <>
-            <Route exact path="/">
-              <Auth />
-            </Route>
-            <Redirect from="*" to="/" />
+            <Route path="/" element={<Auth />}></Route>
           </>
         )}
-      </Switch>
+      </Routes>
     </Router>
   );
 }
