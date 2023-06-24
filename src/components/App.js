@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import AppRouter from "components/Router";
 import { authService, onAuthStateChanged, updateCurrentUser } from "myBase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   // console.log(authService.currentUser);
@@ -28,9 +30,11 @@ function App() {
           refreshUser={refreshUser}
         />
       ) : (
-        "Initializing..."
+        // Initializing...
+        <div className="initTwitter">
+          <FontAwesomeIcon icon={faTwitter} color={"#1D9BF0"} size="5x" />
+        </div>
       )}
-      <footer>&copy; {new Date().getFullYear()} Switter</footer>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Header from "components/Header";
 import {
   authService,
   signOut,
@@ -10,9 +11,11 @@ import {
   updateProfile,
 } from "myBase";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Profile({ refreshUser, userObj }) {
+  const location = useLocation();
+  const title = location.state?.title;
   const history = useNavigate();
   const [newUserName, setNewUserName] = useState(
     userObj.displayName ? userObj.displayName : ""
@@ -52,18 +55,21 @@ function Profile({ refreshUser, userObj }) {
     refreshUser();
   };
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          value={newUserName}
-          type="text"
-          placeholder="user name"
-        />
-        <input type="submit" value="update profile" />
-      </form>
-      <button onClick={onLogOutClick}>Log Out</button>
-    </>
+    <article className="wrap">
+      <Header title={title} />
+      <section>
+        <form onSubmit={onSubmit}>
+          <input
+            onChange={onChange}
+            value={newUserName}
+            type="text"
+            placeholder="user name"
+          />
+          <input type="submit" value="update profile" />
+        </form>
+        <button onClick={onLogOutClick}>Log Out</button>
+      </section>
+    </article>
   );
 }
 

@@ -8,10 +8,15 @@ import {
   onAuthStateChanged,
   authService,
 } from "myBase";
+import { useLocation } from "react-router-dom";
 import Sweet from "components/Sweet";
 import SweetForm from "components/SweetForm";
+import Header from "components/Header";
 
 function Home({ userObj }) {
+  const location = useLocation();
+  const title = location.state?.title;
+
   const [sweetList, setSweetList] = useState([]);
   // console.log(userObj);
 
@@ -39,18 +44,21 @@ function Home({ userObj }) {
   }, []);
 
   return (
-    <div>
-      <SweetForm userObj={userObj} />
-      <div>
-        {sweetList.map((sweet) => (
-          <Sweet
-            key={sweet.id}
-            sweetObj={sweet}
-            isOwner={sweet.creatorId === userObj.uid}
-          />
-        ))}
-      </div>
-    </div>
+    <article className="wrap">
+      <Header title={title} />
+      <section>
+        <SweetForm userObj={userObj} />
+        <div>
+          {sweetList.map((sweet) => (
+            <Sweet
+              key={sweet.id}
+              sweetObj={sweet}
+              isOwner={sweet.creatorId === userObj.uid}
+            />
+          ))}
+        </div>
+      </section>
+    </article>
   );
 }
 
