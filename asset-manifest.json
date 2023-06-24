@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/switter/static/js/main.e31c89f4.js",
+    "main.js": "/switter/static/js/main.5e9b9262.js",
     "index.html": "/switter/index.html",
-    "main.e31c89f4.js.map": "/switter/static/js/main.e31c89f4.js.map"
+    "main.5e9b9262.js.map": "/switter/static/js/main.5e9b9262.js.map"
   },
   "entrypoints": [
-    "static/js/main.e31c89f4.js"
+    "static/js/main.5e9b9262.js"
   ]
 }
