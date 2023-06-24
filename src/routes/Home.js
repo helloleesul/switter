@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { collection, dbService, onSnapshot, orderBy, query } from "myBase";
+import {
+  collection,
+  dbService,
+  onSnapshot,
+  orderBy,
+  query,
+  onAuthStateChanged,
+  authService,
+} from "myBase";
 import Sweet from "components/Sweet";
 import SweetForm from "components/SweetForm";
 
@@ -13,7 +21,7 @@ function Home({ userObj }) {
       collection(dbService, "sweets"),
       orderBy("createdAt", "desc")
     );
-    onSnapshot(sorted, (snapshot) => {
+    const unsubscribe = onSnapshot(sorted, (snapshot) => {
       // console.log(snapshot);
       const getDocuments = snapshot.docs.map((doc) => {
         return {
@@ -22,6 +30,11 @@ function Home({ userObj }) {
         };
       });
       setSweetList(getDocuments);
+    });
+    onAuthStateChanged(authService, (user) => {
+      if (user == null) {
+        unsubscribe();
+      }
     });
   }, []);
 
