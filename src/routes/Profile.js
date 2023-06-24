@@ -10,10 +10,10 @@ import {
   updateProfile,
 } from "myBase";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useNavigate } from "react-router-dom";
 
 function Profile({ refreshUser, userObj }) {
-  const history = useHistory();
+  const history = useNavigate();
   const [newUserName, setNewUserName] = useState(
     userObj.displayName ? userObj.displayName : ""
   );
@@ -36,7 +36,7 @@ function Profile({ refreshUser, userObj }) {
 
   const onLogOutClick = () => {
     signOut(authService);
-    history.push("/");
+    history("/");
   };
   const onChange = (event) => {
     const {
