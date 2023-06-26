@@ -11,11 +11,9 @@ import {
   updateProfile,
 } from "myBase";
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Profile({ refreshUser, userObj }) {
-  const location = useLocation();
-  const title = location.state?.title;
   const history = useNavigate();
   const [newUserName, setNewUserName] = useState(
     userObj.displayName ? userObj.displayName : ""
@@ -56,7 +54,7 @@ function Profile({ refreshUser, userObj }) {
   };
   return (
     <article className="wrap">
-      <Header title={title} />
+      <Header title={"프로필"} />
       <section>
         <form onSubmit={onSubmit}>
           <input

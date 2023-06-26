@@ -1,7 +1,7 @@
 function Header({ title }) {
   return (
     <header>
-      <h2>{title ? title : "홈"}</h2>
+      <h2>{title}</h2>
     </header>
   );
 }

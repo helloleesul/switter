@@ -8,15 +8,11 @@ import {
   onAuthStateChanged,
   authService,
 } from "myBase";
-import { useLocation } from "react-router-dom";
 import Sweet from "components/Sweet";
 import SweetForm from "components/SweetForm";
 import Header from "components/Header";
 
 function Home({ userObj }) {
-  const location = useLocation();
-  const title = location.state?.title;
-
   const [sweetList, setSweetList] = useState([]);
   // console.log(userObj);
 
@@ -45,7 +41,7 @@ function Home({ userObj }) {
 
   return (
     <article className="wrap">
-      <Header title={title} />
+      <Header title={"홈"} />
       <section>
         <SweetForm userObj={userObj} />
         <div>
