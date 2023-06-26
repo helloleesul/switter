@@ -11,15 +11,12 @@
 .container .main > article {
   position: relative;
 }
-.container .main > article > section {
-  padding: 20px;
-}
 
 .container header {
   position: sticky;
   border-bottom: 1px solid #eff3f4;
   width: 100%;
-  height: 50px;
+  height: 65px;
   top: 0;
   display: flex;
   align-items: center;
@@ -28,4 +25,73 @@
   font-weight: 700;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(5px);
+}
+.sweetForm {
+  padding: 20px;
+  border-bottom: 1px solid #eff3f4;
+}
+
+.sweetForm textarea {
+  font-size: 20px;
+  resize: none;
+  margin-bottom: 20px;
+}
+.sweetForm input[type="file"] {
+  display: none;
+}
+.sweetForm .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1d9bf0;
+}
+.sweetForm .btns label {
+  padding: 8px;
+  border-radius: 999px;
+  background-color: #1d9cf027;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.sweetForm .btns label:hover {
+  background-color: #1d9cf05e;
+}
+.sweetForm .btns input[type="submit"] {
+  font-size: 16px;
+  padding: 0 15px;
+  height: 36px;
+  background-color: #1d9bf0;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.2s ease-in-out;
+}
+.sweetForm .btns input[type="submit"]:hover {
+  background-color: #1b8dd9;
+}
+.sweetForm img {
+  width: 100%;
+}
+.sweetForm .img {
+  position: relative;
+  margin-bottom: 20px;
+}
+.sweetForm img + button {
+  position: absolute;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  right: -10px;
+  top: -10px;
+  color: #8f8f8f;
+}
+.sweetForm img + button:hover {
+  color: #1d9bf0;
+}
+.sweetForm img + button svg {
+  width: 100%;
+  height: 100%;
 }

@@ -9,6 +9,10 @@ import {
   uploadString,
   getDownloadURL,
 } from "myBase";
+import style from "styles/Main.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImage } from "@fortawesome/free-regular-svg-icons";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 function SweetForm({ userObj }) {
   const fileInput = useRef();
@@ -85,27 +89,36 @@ function SweetForm({ userObj }) {
     fileInput.current.value = "";
   };
   return (
-    <form onSubmit={onSubmit}>
-      <input
+    <form onSubmit={onSubmit} className={style.sweetForm}>
+      <textarea
+        rows="1"
         onChange={onChange}
         value={sweet}
         type="text"
         placeholder="무슨일이 일어나고 있나요?"
         maxLength={120}
       />
-      <input
-        type="file"
-        accept="image/*"
-        onChange={onFileChange}
-        ref={fileInput}
-      />
-      <input type="submit" value="Sweet" />
       {attachment && (
-        <div>
-          <img src={attachment} width={50} height={50} alt="" />
-          <button onClick={onClearAttachment}>Clear</button>
+        <div className={style.img}>
+          <img src={attachment} alt="" />
+          <button onClick={onClearAttachment}>
+            <FontAwesomeIcon icon={faCircleXmark} />
+          </button>
         </div>
       )}
+      <div className={style.btns}>
+        <label htmlFor="file">
+          <FontAwesomeIcon icon={faImage} size="lg" />
+        </label>
+        <input
+          id="file"
+          type="file"
+          accept="image/*"
+          onChange={onFileChange}
+          ref={fileInput}
+        />
+        <input type="submit" value="스윗하기" />
+      </div>
     </form>
   );
 }

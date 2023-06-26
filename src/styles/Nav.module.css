@@ -11,10 +11,22 @@
 
 .nav ul {
   padding: 20px;
+  padding-top: 0;
 }
 .nav ul .logo {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 65px;
 }
+.nav ul .logo span {
+  color: #1d9bf0;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .nav ul a {
   font-size: 20px;
   display: inline-block;
@@ -24,13 +36,22 @@
 .nav ul a span {
   padding: 10px;
   padding-right: 20px;
+  padding-left: 15px;
   margin-left: -20px;
   border-radius: 999px;
-  transition: background 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 }
 .nav ul a:hover span {
-  background: #e7e7e8;
+  background-color: #e7e7e8;
+}
+.nav ul a span svg {
+  margin-right: 15px;
 }
 .nav .active a {
   font-weight: 700;
+}
+.nav .footer {
+  position: absolute;
+  bottom: 20px;
+  font-weight: 200;
 }

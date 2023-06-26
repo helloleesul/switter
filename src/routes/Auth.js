@@ -5,6 +5,9 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "myBase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import style from "styles/Default.module.css";
 
 function Auth(props) {
   const onSocialClick = async (event) => {
@@ -27,7 +30,11 @@ function Auth(props) {
   };
 
   return (
-    <div>
+    <main className={style.auth}>
+      <div className={style.logo}>
+        <FontAwesomeIcon icon={faTwitter} color={"#ffffff"} size="5x" />
+        <h1>Switter</h1>
+      </div>
       <AuthForm />
       <div>
         <button onClick={onSocialClick} name="google">
@@ -37,7 +44,7 @@ function Auth(props) {
           Github
         </button>
       </div>
-    </div>
+    </main>
   );
 }
 
