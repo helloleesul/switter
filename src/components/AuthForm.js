@@ -77,9 +77,9 @@ function AuthForm(props) {
           value={newAccount ? "Create Account" : "Sign In"}
         />
       </form>
-      <span onClick={toggleAccount}>
-        {newAccount ? "Create Account Mode" : "Sign In Mode"}
-      </span>
+      <button onClick={toggleAccount}>
+        {newAccount ? "계정이 있으신가여?" : "처음이신가여?"}
+      </button>
       {error}
     </>
   );
