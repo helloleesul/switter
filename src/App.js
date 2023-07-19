@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AppRouter from "components/Router";
+import AppRouter from "./Router";
 import { authService, onAuthStateChanged, updateCurrentUser } from "myBase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";

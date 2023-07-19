@@ -7,7 +7,7 @@ import {
 } from "myBase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import style from "styles/Default.module.css";
+import style from "styles/Auth.module.css";
 
 function Auth(props) {
   const onSocialClick = async (event) => {
@@ -30,12 +30,12 @@ function Auth(props) {
   };
 
   return (
-    <main className={style.auth}>
+    <main>
       <div className={style.logo}>
         <FontAwesomeIcon icon={faTwitter} color={"#ffffff"} size="5x" />
         <h1>Switter</h1>
       </div>
-      <AuthForm />
+      <AuthForm style={style} />
       <div>
         <button onClick={onSocialClick} name="google">
           Google

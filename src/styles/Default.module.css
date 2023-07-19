@@ -5,18 +5,3 @@
   height: 100%;
   background-color: #1d9bf0e6;
 }
-
-.auth .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  color: #fff;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
-.auth .logo h1 {
-  font-weight: 100;
-  font-size: 30px;
-  letter-spacing: 0.1rem;
-}

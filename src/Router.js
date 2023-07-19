@@ -9,8 +9,8 @@ import DefaultLayout from "layouts/DefaultLayout";
 
 function AppRouter({ refreshUser, isLoggedIn, userObj }) {
   return (
-    // <Router basename={process.env.PUBLIC_URL}>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
+      {/* <Router> */}
       <Routes>
         {isLoggedIn ? (
           <Route element={<MainLayout userObj={userObj} />}>

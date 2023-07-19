@@ -159,3 +159,10 @@ textarea {
 textarea {
   width: 100%;
 }
+
+button {
+  font-size: inherit;
+  font-family: inherit;
+  background: none;
+  border: none;
+}

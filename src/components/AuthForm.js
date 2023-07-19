@@ -5,7 +5,7 @@ import {
 } from "myBase";
 import { useState } from "react";
 
-function AuthForm(props) {
+function AuthForm({ style }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
@@ -54,7 +54,7 @@ function AuthForm(props) {
   const toggleAccount = () => setNewAccount((prev) => !prev);
 
   return (
-    <>
+    <div className={style.form}>
       <form onSubmit={onSubmit}>
         <input
           name="email"
@@ -72,16 +72,13 @@ function AuthForm(props) {
           value={password}
           onChange={onChange}
         />
-        <input
-          type="submit"
-          value={newAccount ? "Create Account" : "Sign In"}
-        />
+        <input type="submit" value={newAccount ? "가입하기" : "로그인"} />
       </form>
-      <button onClick={toggleAccount}>
-        {newAccount ? "계정이 있으신가여?" : "처음이신가여?"}
+      <span>{error}</span>
+      <button onClick={toggleAccount} className={style.toggleBtn}>
+        {newAccount ? "계정이 있으신가요?" : "처음이신가요?"}
       </button>
-      {error}
-    </>
+    </div>
   );
 }
 

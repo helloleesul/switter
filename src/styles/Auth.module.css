@@ -1,0 +1,49 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.logo h1 {
+  font-weight: 100;
+  font-size: 30px;
+  letter-spacing: 0.1rem;
+}
+.form {
+  text-align: center;
+}
+.form form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+.form form > * {
+  padding: 10px 20px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.form form > *::placeholder {
+  color: #ccc;
+}
+.form form > *:focus {
+  box-shadow: 0 0 1px 1px;
+}
+.form form input[type="submit"] {
+  color: #3ea5f1;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.toggleBtn {
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  padding: 20px 0;
+}
+.toggleBtn:hover {
+  text-decoration: underline;
+}
